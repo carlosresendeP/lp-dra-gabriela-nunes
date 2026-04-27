@@ -1,26 +1,109 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Paleta Psicologia de Alta Autoridade ────────────────────────
+     Foco: Regulação emocional, profundidade e acolhimento humano.
+  ──────────────────────────────────────────────────────────────── */
+  
+  /* Verde Stormy/Slate: Substitui o Sage por algo mais profundo e estável. 
+     Evoca serenidade e autoridade clínica. */
+  --color-sage:   #6B8E8E;   
+
+  /* Warm Alabaster: Um off-white com fundo levemente acinzentado/quente. 
+     Evita o brilho agressivo e transmite limpeza editorial. */
+  --color-cream:  #F4F1EA;   
+
+  /* Sienna Dust: Substitui o laranja vibrante por uma terracota sóbria. 
+     Representa a terra, o "pé no chão" e o calor humano da terapia. */
+  --color-orange: #A67C6A;   
+
+  /* Soft Dust: Um tom de transição para sombras e detalhes sutis. */
+  --color-peach:  #D6C5B0;   
+
+  /* Deep Taupe: Profissionalismo absoluto sem a frieza do cinza puro. */
+  --color-olive:  #70685C;   
+
+  /* ── Tokens semânticos ───────────────────────────────────────── */
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:          var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+  --color-accent:             var(--accent);
+  --color-accent-foreground:  var(--accent-foreground);
+  --color-destructive:        var(--destructive);
+  --color-border:             var(--border);
+  --color-input:              var(--input);
+  --color-ring:               var(--ring);
+  --color-card:               var(--card);
+  --color-card-foreground:    var(--card-foreground);
+  --color-on-black:           var(--on-black);
+  --color-on-white:           var(--on-white);
+
+  /* ── Radii ───────────────────────────────────────────────────── */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* ── Fonts ───────────────────────────────────────────────────── */
+  --font-playfair: "Playfair", serif;
+  --font-inter:    "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Fundo: Papel Alabaster - Conforto visual extremo */
+  --background: #FAF9F6;   
+  
+  /* Texto: Gunmetal Green - Profundidade e autoridade (mais suave que o preto) */
+  --foreground: #242B2B;   
+  
+  --card: #FAF9F6;
+  --card-foreground: #242B2B;
+  
+  /* Cor principal: O novo Slate Green */
+  --primary: #6B8E8E;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #F4F1EA;
+  --secondary-foreground: #70685C;
+  
+  --muted: #F4F1EA;
+  --muted-foreground: #8C8479;
+  
+  /* Destaque em Terracota (Orange atualizado) */
+  --accent: #A67C6A;
+  --accent-foreground: #FAF9F6;
+  
+  --destructive: #964B4B;
+  --border: #E8E4DB;
+  --input: #E8E4DB;
+  --ring: #6B8E8E;
+  
+  /* Cores de contraste */
+  --on-black: #F4F1EA;   /* creme sobre fundo escuro */
+  --on-white: #70685C;   /* taupe sobre fundo claro */
+  
+  --radius: 0.75rem;     /* Cantos levemente mais arredondados para suavidade */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 transition-colors duration-300;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+    font-family: 'Playfair', serif;
+  }
 }
