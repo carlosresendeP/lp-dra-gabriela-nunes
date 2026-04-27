@@ -35,7 +35,7 @@ const Footer = () => (
           © {new Date().getFullYear()} Dra. Gabriela Nunes — Todos os direitos reservados
         </p>
         <p className="text-on-black/25 text-xs">
-          Medicina com responsabilidade e ética
+          Desenvolvido por <strong className="text-primary">Carlos Paula</strong>
         </p>
       </div>
     </div>
