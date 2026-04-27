@@ -106,4 +106,25 @@
     @apply tracking-tight;
     font-family: 'Playfair', serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Customizando a scrollbar para ser 'invisível' ou sutil */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #27272a; /* Um tom zinco escuro (autoridade) */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+  }
 }
